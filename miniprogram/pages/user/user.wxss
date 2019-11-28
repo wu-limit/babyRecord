@@ -1,0 +1,50 @@
+/**index.wxss**/
+
+page{
+  background: #f6f6f6;
+}
+
+.userInfo{
+  text-align: center;
+  padding: 0 20px 20px;
+  background: #62d5c8;
+  width: 100%;
+}
+
+button{
+  color: #fff;
+  font-size: 20px;
+}
+
+.avatar{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: #eee;
+}
+
+.userName{
+  color: #fff;
+  font-size: 16px;
+}
+
+mp-cells{
+  background: #fff;
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.weui-cell__ft_in-access:after {
+    content: " ";
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-width: 2px 2px 0 0;
+    border-color: #ccc;
+    border-style: solid;
+    transform: matrix(.71,.71,-.71,.71,0,0);
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    right: 20px;
+}

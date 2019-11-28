@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userInfo">
+    <view wx:if="{{userInfo.openid}}">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      <view class="userName">{{userInfo.nickName}}</view>
+    </view>
+    <view wx:else>
+      <image class="avatar" src="http://wanjiabianmin.cn/user-unlogin.png"></image>
+      <view>
+        <button hover-class="false" size="mini" bindgetuserinfo="onGetUserInfo" open-type="getUserInfo">点击登录</button>
+      </view>
+    </view>
+  </view>
+  <mp-cells>
+    <mp-cell link url="/pages/babyInfo/babyInfo" value="宝贝信息">
+      <image slot="icon" src="/images/baby.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px; margin-top: -3px;"></image>
+    </mp-cell>
+    <mp-cell link url="/pages/im/im" value="关于我们">
+      <image slot="icon" src="/images/about.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;margin-top: -3px;"></image>
+    </mp-cell>
+  </mp-cells>
+</view>

@@ -1,0 +1,82 @@
+form {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.section {
+  position: relative;
+  background-color: #fff;
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.section::after {
+  content: '';
+  height: 1px;
+  position: absolute;
+  left: 15px;
+  right: 0;
+  bottom: 0;
+  background: #eee;
+}
+
+.section:last-child::after {
+  height: 0;
+}
+
+.section_title, .picker {
+  flex: 1;
+}
+
+.picker {
+  color: #999;
+  margin-right: 20px;
+  line-height: 50px;
+}
+
+.arrow {
+  content: " ";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-width: 2px 2px 0 0;
+  border-color: #ccc;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  right: 20px;
+}
+
+input{
+  height: 50px;
+  line-height: 50px;
+  margin-right: 20px;
+  text-align: right;
+  color: #999;
+  font-size: 16px;
+}
+
+.btn-area{
+  margin-top: 40px;
+}
+
+.btn-area button{
+  background: #62d5c8;
+  color: #fff;
+  font-size: 16px;
+}
+
+.btn-area button:hover{
+  background: #43ddcc;
+}
+
+.radio{
+  margin-right: 20px;
+  font-size: 15px;
+  color: #999;
+}
