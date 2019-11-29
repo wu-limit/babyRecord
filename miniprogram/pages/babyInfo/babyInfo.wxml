@@ -2,7 +2,7 @@
   <form bindsubmit="formSave">
     <view class="section">
       <view class="section_title">宝贝生日</view>
-      <picker mode="date" value="{{date}}" start="2000-01-01" bindchange="bindDateChange">
+      <picker mode="date" name="birthday" value="{{birthday}}" start="2000-01-01" bindchange="bindDateChange">
         <view class="picker">
           {{birthday}}
         </view>
@@ -11,11 +11,11 @@
     </view>
     <view class="section">
       <view class="section_title">宝贝昵称</view>
-      <input class="weui-input" placeholder="请输入宝贝昵称" placeholder-style="color:#999" />
+      <input class="weui-input" name="babyName" placeholder="请输入宝贝昵称" value="{{name}}" placeholder-style="color:#999" />
     </view>
     <view class="section">
       <view class="section_title">宝贝性别</view>
-      <radio-group class="radio-group" bindchange="radioChange">
+      <radio-group class="radio-group" name="sex" bindchange="radioChange">
         <radio class="radio" wx:for-items="{{gender}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
           <text>{{item.value}}</text>
         </radio>
@@ -23,7 +23,7 @@
     </view>
     <view class="section">
       <view class="section_title">出生体重</view>
-      <picker mode="multiSelector" value="{{weight}}" bindchange="bindWeightChange" range="{{weightArray}}">
+      <picker mode="multiSelector" name="weight" value="{{weight}}" bindchange="bindWeightChange" range="{{weightArray}}">
         <view class="picker">
           {{weight}}
         </view>
@@ -31,7 +31,7 @@
     </view>
     <view class="section">
       <view class="section_title">出生身高</view>
-      <picker mode="multiSelector" value="{{height}}" bindchange="bindHeightChange" range="{{heightArray}}">
+      <picker mode="multiSelector" name="height" value="{{height}}" bindchange="bindHeightChange" range="{{heightArray}}">
         <view class="picker">
           {{height}}
         </view>
@@ -39,7 +39,7 @@
     </view>
     <view class="section">
       <view class="section_title">出生孕周</view>
-      <picker mode="multiSelector" value="{{gestational}}" bindchange="bindGestationalChange" range="{{gestationalArray}}">
+      <picker mode="multiSelector" name="gestational" value="{{gestational}}" bindchange="bindGestationalChange" range="{{gestationalArray}}">
         <view class="picker">
           {{gestational}}
         </view>
@@ -47,7 +47,7 @@
       <view class="arrow"></view>
     </view>
     <view class="btn-area">
-      <button formType="submit">保存</button>
+      <button formType="submit" bindtap="updateData">保存</button>
     </view>
   </form>
 </view>
