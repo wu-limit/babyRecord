@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    login: false,
     userInfo: wx.getStorageSync('userInfo') || {},
     birthday: '请选择',
     name: '',
@@ -116,20 +117,30 @@ Page({
    */
   onLoad: function(options) {
     var that = this //此处一定要写
-    db.collection('babyinfo').where({
-      _openid: 'o_rb74vEASdUqHOgCCB7t_LXnROE'
-    })
-    .get({
-      success: function(res) {
-        console.log(res.data[0])
-        that.setData({ //此处用的是上面定义的this
-          birthday: res.data[0].birthday,
-          name: res.data[0].name,
-          sex: res.data[0].sex,
-          weight: res.data[0].weight,
-          height: res.data[0].height,
-          gestational: res.data[0].gestational
-        })
+    wx.getSetting({
+      success(res) {
+        console.log(res.authSetting['scope.userInfo']) //判断用户是否授权登录
+        if (res.authSetting['scope.userInfo']) {
+          that.setData({
+            login: true
+          })
+          db.collection('babyinfo').where({
+              _openid: 'o_rb74vEASdUqHOgCCB7t_LXnROE'
+            })
+            .get({
+              success: function(res) {
+                console.log(res.data[0])
+                that.setData({ //此处用的是上面定义的this
+                  birthday: res.data[0].birthday,
+                  name: res.data[0].name,
+                  sex: res.data[0].sex,
+                  weight: res.data[0].weight,
+                  height: res.data[0].height,
+                  gestational: res.data[0].gestational
+                })
+              }
+            })
+        }
       }
     })
   },

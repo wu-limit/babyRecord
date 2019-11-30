@@ -59,7 +59,6 @@
 .weui-cell:before {
   content: " ";
   position: absolute;
-  left: 0;
   top: 0;
   right: 0;
   height: 1px;

@@ -4,6 +4,6 @@
     "mp-cell": "/components/cell/cell",
     "mp-slideview": "/components/slideview/slideview"
   },
-  "backgroundColor": "#009bdb",
+  "backgroundColor": "#62d5c8",
   "backgroundTextStyle": "dark"
 }

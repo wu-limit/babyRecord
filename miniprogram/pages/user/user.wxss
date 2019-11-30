@@ -6,7 +6,7 @@ page{
 
 .userInfo{
   text-align: center;
-  padding: 0 20px 20px;
+  padding: 0 0 20px;
   background: #62d5c8;
   width: 100%;
 }

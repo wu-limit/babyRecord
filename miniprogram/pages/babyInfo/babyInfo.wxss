@@ -80,3 +80,8 @@ input{
   font-size: 15px;
   color: #999;
 }
+
+.noLogin{
+  margin-top: 40%;
+  text-align: center;
+}

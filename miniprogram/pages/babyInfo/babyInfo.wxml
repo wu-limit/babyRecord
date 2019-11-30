@@ -1,5 +1,5 @@
 <view class="container">
-  <form bindsubmit="formSave">
+  <form bindsubmit="formSave" wx:if="{{login}}">
     <view class="section">
       <view class="section_title">宝贝生日</view>
       <picker mode="date" name="birthday" value="{{birthday}}" start="2000-01-01" bindchange="bindDateChange">
@@ -50,4 +50,5 @@
       <button formType="submit" bindtap="updateData">保存</button>
     </view>
   </form>
+  <view class="noLogin" wx:else>请先授权登录再访问此页面，谢谢</view>
 </view>
