@@ -124,8 +124,9 @@ Page({
           that.setData({
             login: true
           })
+          console.log()
           db.collection('babyinfo').where({
-              _openid: 'o_rb74vEASdUqHOgCCB7t_LXnROE'
+              _openid: that.data.userInfo.openid
             })
             .get({
               success: function(res) {
