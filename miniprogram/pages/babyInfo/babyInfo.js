@@ -84,8 +84,9 @@ Page({
   updateData(e) {
     var getdata = this.data;
     const db = wx.cloud.database();
-    db.collection("babyinfo").add({
+    db.collection("babyinfo").doc('id').set({
       data: {
+        id: getdata.userInfo.openid,
         birthday: getdata.data.birthday,
         name: getdata.data.name,
         sex: getdata.data.sex,
